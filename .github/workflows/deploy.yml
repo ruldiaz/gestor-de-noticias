@@ -29,12 +29,12 @@ jobs:
       run: npm run build -- --base-href=/gestor-de-noticias/
 
     - name: List dist contents
-      run: ls -la dist/ || true
+      run: ls -la dist/Gestor-de-noticias/ || true  # ← Verificamos la subcarpeta
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: dist/gestor-de-noticias/browser  # ← ¡Cambia a esta ruta!
+        folder: dist/Gestor-de-noticias/browser  # ← ¡Usamos el nombre exacto con mayúscula!
         branch: gh-pages
         clean: true
         token: ${{ secrets.DEPLOY_TOKEN }}

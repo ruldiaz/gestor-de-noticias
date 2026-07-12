@@ -15,7 +15,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 24.18.0  # ← ¡Cambiado! Usa tu versión
+        node-version: 24.18
 
     - name: Install dependencies
       run: npm ci
@@ -23,9 +23,12 @@ jobs:
     - name: Build
       run: npm run build -- --base-href=/gestor-de-noticias/
 
+    - name: List dist contents (debug)
+      run: ls -la dist/gestor-de-noticias/
+
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: dist/gestor-de-noticias/browser
+        folder: dist/gestor-de-noticias/browser  # ← ¡Esta es la ruta correcta!
         branch: gh-pages
         clean: true

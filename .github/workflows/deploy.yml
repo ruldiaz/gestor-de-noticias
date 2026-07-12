@@ -34,7 +34,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: dist
+        folder: dist/gestor-de-noticias/browser  # ← ¡Cambia a esta ruta!
         branch: gh-pages
         clean: true
-        token: ${{ secrets.DEPLOY_TOKEN }}  # ← ¡Usa el nombre que elegiste!
+        token: ${{ secrets.DEPLOY_TOKEN }}

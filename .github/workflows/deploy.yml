@@ -24,11 +24,11 @@ jobs:
       run: npm run build -- --base-href=/gestor-de-noticias/
 
     - name: List dist contents (debug)
-      run: ls -la dist/gestor-de-noticias/
+      run: ls -la dist/ || true  # ← Muestra el contenido de dist/
 
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: dist/gestor-de-noticias/browser  # ← ¡Esta es la ruta correcta!
+        folder: dist  # ← Despliega toda la carpeta dist/
         branch: gh-pages
         clean: true
